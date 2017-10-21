@@ -1,0 +1,38 @@
+body{
+
+margin-left: 150px;
+margin-right: 150px;
+}
+
+h1{
+	z-index: 1;
+}
+.container{
+	
+	position: relative;
+}
+#absolute{
+background: #999;
+padding: 20px;
+position: absolute;
+right: 0px;
+bottom: 0px;
+
+
+}
+#relative{
+	background: #eee;
+	padding: 40px;
+   position: relative;
+
+}
+#fixed{
+	padding:50px;
+	position: fixed;
+	background: #eee;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+
+
+}
