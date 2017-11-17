@@ -1,0 +1,23 @@
+* {
+	transition: all 0.187564s;
+}
+h1 {
+	background-color: #bbbbbb;
+	font-size: 80px;
+}
+input:focus {
+	background-color: black;
+	color: white;
+}
+a {
+	text-decoration: none;
+	font-size: 40px;
+	color: darkgrey;
+}
+a:active {
+	background-color: red;
+	font-size: 60px;
+}
+.mylink:hover {
+	background-color: blue;
+}

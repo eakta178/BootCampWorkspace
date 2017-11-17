@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+
+   <form>
+    <label class="label" for="UserEntry">Enter "r"or"p"or "s"</label>
+    <br>
+    <input class="txtbox" type="text" name="Name" placeholder="Win Score">
+    <br>
+
+
+     <label class="label" for="win">Win Score</label>
+    <br>
+    <input class="txtbox" type="text" name="Name" placeholder="Win Score">
+    <br>
+
+    <label class="label" for="loss">Loss Score</label>
+    <br>
+    <input class="txtbox" type="text" name="Name" placeholder="Loss Score">
+    <br>
+
+      <label class="label" for="ties">Tie Score</label>
+    <br>
+    <input class="txtbox" type="text" name="Name" placeholder="Tie Score">
+    <br>
+
+   </form> 
+
+
+  </div>
+
+  <script type="text/javascript">
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = ["r", "p", "s"];
+    var win=0;
+    var loss=0;
+    var ties=0;
+   
+
+
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
+
+      // Determines which key was pressed.
+      var userGuess = event.key;
+
+      // Randomly chooses a choice from the options array. This is the Computer's guess.
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+
+
+   
+
+if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+      // Alerts the key the user pressed (userGuess).
+      console.log("User guess: " + userGuess);
+
+      // Alerts the Computer's guess.
+      console.log("Computer guess: " + computerGuess);
+
+/* paper>scissor*/
+
+if (userGuess === "p" && computerGuess === "s" ) 
+{
+loss++;
+}
+
+/* rock > scissor*/
+
+if (userGuess === "s" && computerGuess === "r" ) 
+{
+loss++;
+}
+
+/* rock < paper*/
+if (userGuess === "r" && computerGuess === "p" ) 
+{
+loss++;
+}
+
+
+if (userGuess === "p" && computerGuess === "r" ) 
+{
+win++;
+}
+
+if (userGuess === "s" && computerGuess === "p" ) 
+{
+win++;
+}
+
+if (userGuess === "r" && computerGuess === "s" ) 
+{
+win++;
+}
+
+
+
+if (userGuess === computerGuess) {
+  ties++;
+}
+
+
+
+var domEl = document.getElementById('game')
+
+var htmlToInsert = 'Wins: ' + win + "<br>"  +"Loss: " + loss + "<br>" + "Ties: " + ties + "<br>"
+
+domEl.innerHTML = htmlToInsert;
+
+}
+
+
+ }
+// if (computerGuess=== "r" && userGuess === "p") 
+// {
+//  document.write();
+
+// }
+
+
+  </script>
+
+</body>
+
+</html>

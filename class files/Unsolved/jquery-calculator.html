@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Calculator</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- Jumbotron for Title -->
+<div class="jumbotron">
+    <h1 class="text-center">jQuery Calculator</h1>
+    <h3 class="text-center">Perform basic mathematic operations using the power of jQuery!</h3>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <!-- Calculator Panel -->
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Calculator</h3>
+                </div>
+
+                <div class="panel-body selectors">
+                    <button id="button-1" class="btn btn-primary number" value="1"><h1>1</h1></button>
+                    <button id="button-2" class="btn btn-primary number" value="2"><h1>2</h1></button>
+                    <button id="button-3" class="btn btn-primary number" value="3"><h1>3</h1></button>
+                    <button id="button-plus" class="btn btn-danger operator" value="plus"><h1>+</h1></button>
+                    <br><br>
+                    <button id="button-4" class="btn btn-primary number" value="4"><h1>4</h1></button>
+                    <button id="button-5" class="btn btn-primary number" value="5"><h1>5</h1></button>
+                    <button id="button-6" class="btn btn-primary number" value="6"><h1>6</h1></button>
+                    <button id="button-minus" class="btn btn-danger operator" value="minus"><h1>&minus;</h1></button>
+                    <br><br>
+                    <button id="button-7" class="btn btn-primary number" value="7"><h1>7</h1></button>
+                    <button id="button-8" class="btn btn-primary number" value="8"><h1>8</h1></button>
+                    <button id="button-9" class="btn btn-primary number" value="9"><h1>9</h1></button>
+                    <button id="button-multiply" class="btn btn-danger operator" value="times"><h1>&times;</h1></button>
+                    <br><br>
+                    <button id="button-0" class="btn btn-primary number" value="0"><h1>0</h1></button>
+                    <button id="button-divide" class="btn btn-danger operator" value="divide"><h1>&divide;</h1></button>
+                    <button id="button-power" class="btn btn-danger operator" value="power"><h1>^</h1></button>
+                    <button id="button-equal" class="btn btn-success equal" value="equals"><h1>=</h1></button>
+                    <br><br>
+                    <button id="button-clear" class="btn btn-default clear" value="clear"><h1>clear</h1></button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Result Panel -->
+        <div class="col-lg-6">
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Result</h3>
+                </div>
+                <div class="panel-body calc">
+                    <h1 id="first-number"></h1>
+                    <h1 id="operator"></h1>
+                    <h1 id="second-number"></h1>
+                    <hr>
+                    <h1 id="result"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+var firstNumber = $('#first-number');
+var secondNumber = $('#second-number');
+var operator = $('#operator');
+var result = $('#result');
+var isFirstNum = true;
+
+
+
+//Intitlize the calculator
+
+
+
+
+// What will you do with the numbers clicked?
+// For numbers use the class number
+// Use $(this).attr.("value") to get the value
+// Set a variable isFirstNum to true by default
+ $(".number").on("click", function() {
+    if (firstNumber === "")
+    {
+        isFirstNum = true;
+    }
+    if (isFirstNum) {
+        var valFirstNumber = $(this).attr.("value")
+        firstNumber.append(parseInt(valFirstNumber))
+    else
+        var valSecondNumber = $(this).attr.("value")
+        secondNumber.append(parseInt(valSecondNumber))
+    }
+     })
+
+// What will you do when the operator is clicked?
+// For operator use the class operator
+// Use $(this).attr.("value") to get the value
+// Set a variable isFirstNum to true by default
+ $(".operator").on("click", function() {
+    isFirstNum = false;
+    var valOperator = $(this).attr.("value")
+    operator.append(valOperator)
+
+     })
+
+ $(".clear").on("click", function() {
+    $("#first-number", )
+     })
+
+  $(".equal").on("click", function() {
+     })
+
+
+});
+
+// Your code here...
+// var display = $('#first-number')=
+
+// How will you capture button clicks?
+// $(".selectors").on("click", function() {
+//  if($(this) == '.operator'){
+//     $("#operator").val($(".operator").val()+$(this).val())
+//  }
+//  else if($(this) == (".number") ){
+//     $("#first-number").val($(".\\\\\\\\\\\\\\]number").val()+$(this).val())
+//  }
+// })
+
+
+    // $("#button-1").on("click", function() {
+         
+    //      $(first-number) = $("#button-1").val()
+    //      ;
+    //   });
+
+
+    // $("#button-2").on("click", function() {
+    //     return $("#button-2").val();
+    //   });
+    //  $("#button-3").on("click", function() {
+    //     return $("#button-3").val();
+    //   });
+    //  $("#button-4").on("click", function() {
+    //     return $("#button-4").val();
+    //   });
+    //  $("#button-5").on("click", function() {
+    //     return $("#button-5").val();
+    //   });
+    //  $("#button-6").on("click", function() {
+    //     return $("#button-6").val();
+    //   });
+    //  $("#button-7").on("click", function() {
+    //     return $("#button-7").val();
+    //   });
+    //  $("#button-8").on("click", function() {
+    //     return $("#button-8").val();
+    //   });
+    //  $("#button-9").on("click", function() {
+    //     return $("#button-9").val();
+    //   });
+    //  $("#button-0").on("click", function() {
+    //     return $("#button-0").val();
+    //   });
+    //  $("#button-multiply").on("click", function() {
+    //     return "*";
+    //   });
+    //  $("#button-plus").on("click", function() {
+    //     return "+";
+    //   });
+    //  $("#button-minus").on("click", function() {
+    //     return "-";
+    //   });
+
+    //  $("#button-divide").on("click", function() {
+    //      return "/";
+    //   });
+    //  $("#button-power").on("click", function() {
+    //      return "^";
+    //   });
+
+    //  $("#button-equal").on("click", function() {
+    //     ;
+    //   });
+    //  $("#button-clear").on("click", function() {
+    //     ;
+    //   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
